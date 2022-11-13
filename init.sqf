@@ -87,24 +87,24 @@ _swapMap = createHashMapFromArray [
     /* ["acc_pointer_IR",""], // PEQ */
 
     ["V_TacChestrig_oli_F",[
-        "VSM_fapc_breacher_projecthonor",
-        "VSM_fapc_operator_projecthonor"
+        "VSM_fapc_breacher_projecthonor",0.2,
+        "VSM_fapc_operator_projecthonor",0.8
     ]], // Light carrier rig (mostly vest)
     ["V_TacVest_oli",[
-        "VSM_RAV_breacher_projecthonor",
-        "VSM_RAV_operator_projecthonor"
+        "VSM_RAV_breacher_projecthonor",0.2,
+        "VSM_RAV_operator_projecthonor",0.8
     ]], // light vest
     ["V_HarnessO_ghex_F",[
-        "VSM_fapc_breacher_projecthonor",
-        "VSM_fapc_operator_projecthonor",
-        "VSM_RAV_breacher_projecthonor",
-        "VSM_RAV_operator_projecthonor"
+        "VSM_fapc_breacher_projecthonor",0.2,
+        "VSM_fapc_operator_projecthonor",0.8,
+        "VSM_RAV_breacher_projecthonor",0.2,
+        "VSM_RAV_operator_projecthonor",0.8
     ]], // Standard vest
     ["V_HarnessOGL_ghex_F",[
-        "VSM_fapc_breacher_projecthonor",
-        "VSM_fapc_operator_projecthonor",
-        "VSM_RAV_breacher_projecthonor",
-        "VSM_RAV_operator_projecthonor"
+        "VSM_fapc_breacher_projecthonor",0.2,
+        "VSM_fapc_operator_projecthonor",0.8,
+        "VSM_RAV_breacher_projecthonor",0.2,
+        "VSM_RAV_operator_projecthonor",0.8
     ]], // GL Vest
 
     ["B_Carryall_ghex_OTAAR_AAR_F",_carryall],
@@ -137,7 +137,7 @@ private _fn_getReplacementItem = {
 
     _replacement = _swapMap getOrDefault [_item,_item,true];
     if (_replacement isEqualType []) then {
-        _replacement = selectRandom _replacement;
+        _replacement = [_replacement,""] call KISKA_fnc_selectRandom;
     };
 
     _replacement
@@ -182,6 +182,13 @@ private _sfUniforms = [
     "vsm_projecthonor_crye_ss_od_shirt_camo",
     "vsm_projecthonor_crye_camo",
     "vsm_projecthonor_crye_ss_camo"
+];
+
+private _sfVests = [
+    "VSM_fapc_breacher_projecthonor",0.2,
+    "VSM_fapc_operator_projecthonor",0.8,
+    "VSM_LBT6094_breacher_projecthonor",0.2,
+    "VSM_LBT6094_operator_projecthonor",0.8
 ];
 
 private _sfHelmets = [
@@ -279,7 +286,8 @@ private _fn_getUnits = {
         } forEach _secondaryWeaponItems;
 
         _uniformLoadout = _loadout select 3;
-        _uniformLoadout set [0,_equipmentClasses select 0];
+        private _uniform = _equipmentClasses select 0;
+        _uniformLoadout set [0,_uniform];
         // loop through each item type in clothing
         (_uniformLoadout select 1) apply {
             _x set [
@@ -290,7 +298,14 @@ private _fn_getUnits = {
 
 
         _vestLoadout = _loadout select 4;
-        _vestLoadout set [0,[_vestLoadout select 0] call _fn_getReplacementItem];
+        private _vest = "";
+        if ("crye" in _uniform) then {
+            _vest = [_sfVests,""] call KISKA_fnc_selectRandom;
+        } else {
+            _vest = [_vestLoadout select 0] call _fn_getReplacementItem;
+        };
+
+        _vestLoadout set [0,_vest];
         (_vestLoadout select 1) apply {
             _x set [
                 0,
