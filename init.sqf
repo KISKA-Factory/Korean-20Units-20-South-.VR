@@ -150,11 +150,50 @@ private _regularHelmets = [
 ];
 
 private _goggles = [
+    "g_combat",
+    "g_combat_goggles_tna_f"
+];
 
+private _winterFacewear = [
+    "G_tactical_black",
+    "cup_g_oakleys_drk",
+    "cup_g_ess_blk_dark",
+    "CUP_G_ESS_KHK_facewrap_white",
+    "CUP_G_ESS_rgr_facewrap_tropical",
+    "CUP_G_ESS_blk_facewrap_black",
+    "CUP_G_ESS_rgr_facewrap_Ranger",
+    "VSM_balaclava2_od_goggles",
+    "VSM_balaclava1_black_goggles"
 ];
 
 private _glasses = [
+    "G_tactical_clear",
+    "G_tactical_black",
+    "cup_g_oakleys_clr",
+    "cup_g_oakleys_drk",
+    "cup_g_oakleys_embr"
+];
 
+private _regularWinterUniforms = [
+    "CUP_I_B_PMC_Unit_34",
+    "CUP_I_B_PMC_Unit_30"
+];
+
+private _sfUniforms = [
+    "vsm_projecthonor_crye_od_shirt_camo",
+    "vsm_projecthonor_crye_ss_od_shirt_camo",
+    "vsm_projecthonor_crye_camo",
+    "vsm_projecthonor_crye_ss_camo"
+];
+
+private _sfHelmets = [
+    "VSM_projecthonor_ops",
+    "VSM_projecthonor_ops_2"
+];
+
+private _sfWinterUniforms = [
+    "Alpine_crye_camo",
+    "Alpine_white_crye_camo"
 ];
 
 private _fn_getUnits = {
@@ -168,24 +207,24 @@ private _fn_getUnits = {
     _equipmentArray = [
         ["vsm_projecthonor_camo",selectRandom _regularHelmets,"",[-10,-10]],
         ["vsm_projecthonor_camo_ss",selectRandom _regularHelmets,"",[-9,-10]],
-        ["vsm_projecthonor_od_shirt_camo",selectRandom _regularHelmets,"",[-10,-12]],
-        ["vsm_projecthonor_od_shirt_camo_ss",selectRandom _regularHelmets,"",[-9,-12]],
-        ["CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads",selectRandom _regularHelmets,"",[-10,-14]],
-        ["CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_rolled_up_gloves_pads",selectRandom _regularHelmets,"",[-9,-14]],
+        ["vsm_projecthonor_od_shirt_camo",selectRandom _regularHelmets,selectRandom _glasses,[-10,-12]],
+        ["vsm_projecthonor_od_shirt_camo_ss",selectRandom _regularHelmets,selectRandom _glasses,[-9,-12]],
+        ["vsm_projecthonor_camo",selectRandom _regularHelmets,selectRandom _goggles,[-10,-14]],
+        ["vsm_projecthonor_camo_ss",selectRandom _regularHelmets,selectRandom _goggles,[-9,-14]],
 
-        ["CUP_U_O_RUS_Ratnik_Summer","CUP_H_RUS_6B47_v2_Summer","",[-7,-10]],
-        ["CUP_U_O_RUS_Ratnik_Summer","CUP_H_RUS_6B47_v2_Summer","G_Bandanna_oli",[-6,-10]],
-        ["CUP_U_O_RUS_Ratnik_Summer","CUP_H_RUS_6B47_v2_GogglesClosed_Summer","G_Bandanna_oli",[-7,-12]],
-        ["CUP_U_O_RUS_Ratnik_Summer","CUP_H_RUS_6B47_v2_GogglesUp_Summer","",[-6,-12]],
-        ["CUP_U_O_RUS_Ratnik_Summer","CUP_H_RUS_6B47_v2_GogglesDown_Summer","G_Bandanna_oli",[-7,-14]],
-        ["CUP_U_O_RUS_Ratnik_Summer","CUP_H_RUS_6B47_v2_GogglesDown_Summer","",[-6,-14]],
+        [selectRandom _regularWinterUniforms,selectRandom _regularHelmets,"",[-7,-10]],
+        [selectRandom _regularWinterUniforms,selectRandom _regularHelmets,"",[-6,-10]],
+        [selectRandom _regularWinterUniforms,selectRandom _regularHelmets,selectRandom _winterFacewear,[-7,-12]],
+        [selectRandom _regularWinterUniforms,selectRandom _regularHelmets,selectRandom _winterFacewear,[-6,-12]],
+        [selectRandom _regularWinterUniforms,selectRandom _regularHelmets,selectRandom _winterFacewear,[-7,-14]],
+        [selectRandom _regularWinterUniforms,selectRandom _regularHelmets,selectRandom _winterFacewear,[-6,-14]],
 
-        ["CUP_U_O_RUS_Ratnik_Winter","CUP_H_RUS_6B47_v2_Winter","",[-4,-10]],
-        ["CUP_U_O_RUS_Ratnik_Winter","CUP_H_RUS_6B47_v2_Winter","G_Bandanna_blk",[-3,-10]],
-        ["CUP_U_O_RUS_Ratnik_Winter","CUP_H_RUS_6B47_v2_GogglesClosed_Winter","",[-4,-12]],
-        ["CUP_U_O_RUS_Ratnik_Winter","CUP_H_RUS_6B47_v2_GogglesClosed_Winter","G_Bandanna_blk",[-3,-12]],
-        ["CUP_U_O_RUS_Ratnik_Winter","CUP_H_RUS_6B47_v2_GogglesDown_Winter","",[-4,-14]],
-        ["CUP_U_O_RUS_Ratnik_Winter","CUP_H_RUS_6B47_v2_GogglesDown_Winter","G_Bandanna_blk",[-3,-14]]
+        [selectRandom _sfUniforms,selectRandom _sfHelmets,selectRandom _glasses,[-4,-10]],
+        [selectRandom _sfUniforms,selectRandom _sfHelmets,selectRandom _glasses,[-3,-10]],
+        [selectRandom _sfUniforms,selectRandom _sfHelmets,selectRandom _glasses,[-4,-12]],
+        [selectRandom _sfWinterUniforms,selectRandom _sfHelmets,selectRandom _winterFacewear,[-3,-12]],
+        [selectRandom _sfWinterUniforms,selectRandom _sfHelmets,selectRandom _winterFacewear,[-4,-14]],
+        [selectRandom _sfWinterUniforms,selectRandom _sfHelmets,selectRandom _winterFacewear,[-3,-14]]
     ];
 
     private _group = grpNull;
@@ -240,12 +279,6 @@ private _fn_getUnits = {
             };
 
         } forEach _secondaryWeaponItems;
-
-
-        if ( "ak74" in (tolower (_primaryWeaponItems select 0)) ) then {
-            _primaryWeaponItems set [1,"rhs_acc_dtk"];
-        };
-
 
         _uniformLoadout = _loadout select 3;
         _uniformLoadout set [0,_equipmentClasses select 0];
