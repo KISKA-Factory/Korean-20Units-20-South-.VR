@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=663;
+		nextID=675;
 	};
 	class Camera
 	{
-		pos[]={2331.4004,152.63213,5739.4839};
-		dir[]={-0.028350655,-0.66226244,-0.74889517};
-		up[]={-0.025051022,0.74930501,-0.66178882};
-		aside[]={-0.99944568,-1.331282e-006,0.037837002};
+		pos[]={2987.3137,261.59824,5606.1821};
+		dir[]={-0.73848867,-0.51264793,-0.43826029};
+		up[]={-0.44088078,0.85860962,-0.26164559};
+		aside[]={-0.51042998,-1.3637473e-006,0.86009848};
 	};
 };
 binarizationWanted=0;
@@ -347,7 +347,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=42;
+		items=44;
 		class Item0
 		{
 			dataType="Object";
@@ -48435,6 +48435,26 @@ class Mission
 			};
 			title="Give Gunner Vests";
 			id=662;
+		};
+		class Item42
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={2629.48,5,5541.708};
+			};
+			title="Need to Change launcher to carl gustav";
+			id=673;
+		};
+		class Item43
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={2659.719,5,5539.1431};
+			};
+			title="Change launcher to titan";
+			id=674;
 		};
 	};
 };
