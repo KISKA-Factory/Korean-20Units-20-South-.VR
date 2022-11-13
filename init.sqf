@@ -1,4 +1,4 @@
-/* _classes = [
+_classes = [
 "O_T_Soldier_AHAT_F",
 "O_T_Soldier_AAA_F",
 "O_T_Soldier_AAT_F",
@@ -40,16 +40,16 @@ _positions = [
 [2832.1,5552.18,0],
 [2864.01,5552.4,0],
 [2895.79,5552.18,0]
-]; */
+];
 
-_classes = [
+/* _classes = [
 "O_T_Soldier_A_F",
-"O_T_Soldier_M_F"
+"O_T_Soldier_HAT_F"
 ];
 _positions = [
 [2255.86,5552.18,0],
 [2288.08,5552.08,0]
-];
+]; */
 
 private _nvg = "CUP_NVG_PVS15_black";
 private _carryall = ["B_carryall_green_f","VSM_projecthonor_carryall"];
@@ -84,6 +84,9 @@ _swapMap = createHashMapFromArray [
     ["optic_ACO_grn",_reddot], // Red dot
     ["optic_DMS",_scope], // DMR scope
     ["optic_Arco_blk_F",_midOptic], // mid-range optic
+    ["RPG32_F","mraws_heat_f"], // rocket round
+    ["RPG32_HE_F","mraws_heat55_f"],
+    ["Vorona_HEAT","titan_at"],
     /* ["acc_pointer_IR",""], // PEQ */
 
     ["V_TacChestrig_oli_F",[
@@ -123,8 +126,9 @@ _swapMap = createHashMapFromArray [
     ["B_FieldPack_ghex_OTMedic_F",_fieldPack],
     ["B_FieldPack_ghex_OTAA_F",_fieldPack],
 
-    ["launch_RPG32_ghex_F","launch_RPG32_green_F"],
+    ["launch_RPG32_ghex_F","launch_mraws_olive_f"],
     ["launch_O_Titan_short_ghex_F","launch_i_Titan_short_F"],
+    ["launch_O_Vorona_green_F","launch_i_Titan_short_F"],
     ["launch_O_Titan_ghex_F","launch_b_Titan_olive_F"],
 
     ["150Rnd_93x64_Mag","200rnd_556x45_box_red_f"],
@@ -349,11 +353,10 @@ private _fn_getUnits = {
     _units
 };
 
-/*
+
 {
     [
         _x,
         _positions select _forEachIndex
     ] call _fn_getUnits;
 } forEach _classes;
-*/
