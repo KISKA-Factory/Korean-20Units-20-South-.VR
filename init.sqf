@@ -16,7 +16,8 @@ _classes = [
 "O_T_Soldier_TL_F",
 "O_T_Soldier_SL_F",
 "O_T_Soldier_F",
-"O_T_Soldier_AAR_F"
+"O_T_Soldier_AAR_F",
+"O_T_Soldier_M_F"
 ];
 _positions = [
 [2255.86,5552.18,0],
