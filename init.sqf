@@ -48,7 +48,7 @@ _classes = [
 ];
 _positions = [
 [2255.86,5552.18,0],
-[2288.08,5552.08,0],
+[2288.08,5552.08,0]
 ];
 
 private _nvg = "CUP_NVG_PVS15_black";
@@ -155,15 +155,13 @@ private _goggles = [
 ];
 
 private _winterFacewear = [
-    "G_tactical_black",
-    "cup_g_oakleys_drk",
     "cup_g_ess_blk_dark",
     "CUP_G_ESS_KHK_facewrap_white",
     "CUP_G_ESS_rgr_facewrap_tropical",
     "CUP_G_ESS_blk_facewrap_black",
     "CUP_G_ESS_rgr_facewrap_Ranger",
     "VSM_balaclava2_od_goggles",
-    "VSM_balaclava1_black_goggles"
+    "VSM_balaclava2_black_goggles"
 ];
 
 private _glasses = [
@@ -336,9 +334,11 @@ private _fn_getUnits = {
     _units
 };
 
-/* {
+/*
+{
     [
         _x,
         _positions select _forEachIndex
     ] call _fn_getUnits;
-} forEach _classes; */
+} forEach _classes;
+*/
